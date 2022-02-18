@@ -66,7 +66,7 @@ namespace _04_interactions_framework.Modules
             DateTime.TryParse(dateTime, out dateValue);
             try
             {
-                dateValue = dateValue.AddTicks(TimeZoneInfo.FindSystemTimeZoneById("PST").BaseUtcOffset.Ticks);
+                dateValue = dateValue.AddTicks(TimeZoneInfo.FindSystemTimeZoneById("US/Pacific").BaseUtcOffset.Ticks);
                 dateValue = dateValue.AddTicks(-TimeZoneInfo.FindSystemTimeZoneById(db.GetDiscordUserTimeZone(Context.User.Id)).BaseUtcOffset.Ticks);
             }
             catch (ArgumentOutOfRangeException ex)
