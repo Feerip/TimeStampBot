@@ -119,7 +119,7 @@ namespace _04_interactions_framework.Modules
             }
 
 
-            replyString = "TESTING GITHUB DEPLOYMENT" +
+            replyString =
                 $"Just to double check, the time you're talking about was/is <t:{dto.ToUnixTimeSeconds()}:R>.\n" +
                 $"If this is not correct, please dismiss this message and try again.\n" +
                 $"Otherwise, here are your timestamps:\n\n" +
