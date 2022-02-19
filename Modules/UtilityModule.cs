@@ -123,15 +123,17 @@ namespace _04_interactions_framework.Modules
                 $"Just to double check, the time you're talking about is/was <t:{dto.ToUnixTimeSeconds()}:R>.\n" +
                 $"If this is not correct, please dismiss this message and try again.\n" +
                 $"Otherwise, here are your timestamps:\n\n" +
+
+                $"**PROTIP:** Users can mouseover any timestamp to show the full-length format.\n" +
                 $"`<t:{dto.ToUnixTimeSeconds()}:t>` => <t:{dto.ToUnixTimeSeconds()}:t>\n" +
                 $"`<t:{dto.ToUnixTimeSeconds()}:T>` => <t:{dto.ToUnixTimeSeconds()}:T>\n" +
                 $"`<t:{dto.ToUnixTimeSeconds()}:d>` => <t:{dto.ToUnixTimeSeconds()}:d>\n" +
                 $"`<t:{dto.ToUnixTimeSeconds()}:D>` => <t:{dto.ToUnixTimeSeconds()}:D>\n" +
                 $"`<t:{dto.ToUnixTimeSeconds()}:f>` => <t:{dto.ToUnixTimeSeconds()}:f>\n" +
                 $"`<t:{dto.ToUnixTimeSeconds()}:F>` => <t:{dto.ToUnixTimeSeconds()}:F>\n" +
-                $"`<t:{dto.ToUnixTimeSeconds()}:R>` => <t:{dto.ToUnixTimeSeconds()}:R>";
-
-            replyString += $"\n\nIf this is your first time using this feature and you don't know what to choose, " +
+                $"`<t:{dto.ToUnixTimeSeconds()}:R>` => <t:{dto.ToUnixTimeSeconds()}:R>\n";
+                
+            replyString += $"\n**HINT:** If this is your first time using this feature and you don't know what to choose, " +
                 $"I suggest a combination of these two formats:\n" +
                 $"`<t:{dto.ToUnixTimeSeconds()}:R> at <t:{dto.ToUnixTimeSeconds()}:f>`\n" +
                 $"Which you can use like this:\n" +
