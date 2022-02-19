@@ -14,7 +14,17 @@ namespace _04_interactions_framework
 
         public TimeZoneSelectMenuBuilder()
         {
-            _allTimeZones = TimeZoneInfo.GetSystemTimeZones();
+            List<TimeZoneInfo> tziList = new();
+            List<string> stringList = new();
+            foreach (var tzi in TimeZoneInfo.GetSystemTimeZones())
+            {
+                if (!stringList.Contains(tzi.DisplayName.Substring(0, 11)))
+                {
+                    stringList.Add(tzi.DisplayName.Substring(0, 11));
+                    tziList.Add(tzi);
+                }
+            }
+            _allTimeZones = tziList;
         }
 
         public SelectMenuBuilder MenuBuilder(int page)
