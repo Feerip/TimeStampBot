@@ -74,7 +74,7 @@ namespace _04_interactions_framework.Modules
                 // Otherwise, we're already done.
                 
                 // Give the user exactly what they want
-                await RespondAsync($"Your <@&792538753762590790> timestamp:\n<t:{aod_dto.ToUnixTimeSeconds()}:F>```<t:{aod_dto.ToUnixTimeSeconds()}:F>```", ephemeral: true);
+                await RespondAsync($"Your <@&792538753762590790> timestamp:\n<t:{aod_dto.ToUnixTimeSeconds()}:f>```<t:{aod_dto.ToUnixTimeSeconds()}:f>```", ephemeral: true);
                 // And then fuck off
                 return;
             }
