@@ -59,26 +59,26 @@ namespace _04_interactions_framework.Modules
                 return;
             }
 
-            // Check for AoD timestamp
-            if (dateTime.Equals("aod", StringComparison.OrdinalIgnoreCase))
-            {
-                // Get current date and time
-                DateTime timeNow = DateTime.Now;
-                // Set the initial target date to today (as per excution date) and its time to our normal AoD time (6pm) with offset PST to account for server location.
-                // This should theoretically take care of daylight savings time requirement, changing it between 1am and 2am UTC based on the server's local time zone info.
-                DateTimeOffset aod_dto = new(timeNow.Year, timeNow.Month, timeNow.Day, 18, 0, 0, TimeZoneInfo.FindSystemTimeZoneById("US/Pacific").BaseUtcOffset);
+            //// Check for AoD timestamp
+            //if (dateTime.Equals("aod", StringComparison.OrdinalIgnoreCase))
+            //{
+            //    // Get current date and time
+            //    DateTime timeNow = DateTime.Now;
+            //    // Set the initial target date to today (as per excution date) and its time to our normal AoD time (6pm) with offset PST to account for server location.
+            //    // This should theoretically take care of daylight savings time requirement, changing it between 1am and 2am UTC based on the server's local time zone info.
+            //    DateTimeOffset aod_dto = new(timeNow.Year, timeNow.Month, timeNow.Day, 18, 0, 0, TimeZoneInfo.FindSystemTimeZoneById("US/Pacific").BaseUtcOffset);
 
-                if (timeNow.Hour > 18)  // If current time is after 6pm, we need to add a day because this is for tomorrow.
-                {
-                    aod_dto = aod_dto.AddDays(1);
-                }
-                // Otherwise, we're already done.
+            //    if (timeNow.Hour > 18)  // If current time is after 6pm, we need to add a day because this is for tomorrow.
+            //    {
+            //        aod_dto = aod_dto.AddDays(1);
+            //    }
+            //    // Otherwise, we're already done.
                 
-                // Give the user exactly what they want
-                await RespondAsync($"Your <@&792538753762590790> timestamp:\n<t:{aod_dto.ToUnixTimeSeconds()}:f>```<t:{aod_dto.ToUnixTimeSeconds()}:f>```", ephemeral: true);
-                // And then fuck off
-                return;
-            }
+            //    // Give the user exactly what they want
+            //    await RespondAsync($"Your <@&792538753762590790> timestamp:\n<t:{aod_dto.ToUnixTimeSeconds()}:f>```<t:{aod_dto.ToUnixTimeSeconds()}:f>```", ephemeral: true);
+            //    // And then fuck off
+            //    return;
+            //}
 
             // Regular timestamp
             DateTime dateValue;
@@ -92,7 +92,7 @@ namespace _04_interactions_framework.Modules
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                RespondAsync($"Failed to parse timestamp: ```{ex.ToString()}```");
+                await RespondAsync($"Failed to parse timestamp: ```{ex.ToString()}```");
                 return;
             }
             DateTimeOffset dto = new(dateValue);
