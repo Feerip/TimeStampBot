@@ -139,7 +139,6 @@ namespace _04_interactions_framework.Modules
                 return;
             }
 
-
             replyString =
                 $"Just to double check, the time you're talking about is/was <t:{dto.ToUnixTimeSeconds()}:R>.\n" +
                 $"If this is not correct, please dismiss this message and try again.\n" +
