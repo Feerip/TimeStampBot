@@ -38,6 +38,7 @@ namespace _04_interactions_framework.Modules
             }
 
         }
+
         private async Task BozoDMLog(string functionName)
         {
             Console.WriteLine($"Executing {functionName} for {Context.User.Username}#{Context.User.Discriminator} () " +
