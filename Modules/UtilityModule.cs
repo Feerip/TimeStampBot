@@ -26,7 +26,6 @@ namespace _04_interactions_framework.Modules
 
         private async Task BozoLog(string functionName)
         {
-            //{Context.Guild.GetUser(Context.User.Id).Nickname}
             try
             {
                 Console.WriteLine($"Executing {functionName} for {Context.User.Username}#{Context.User.Discriminator} () " +
