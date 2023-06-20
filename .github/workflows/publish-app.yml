@@ -35,7 +35,7 @@ jobs:
     - name: Stop TimeStampBot Service
       uses: garygrossgarten/github-action-ssh@release
       with: 
-        command: sudo systemctl stop TimeStampBot.service
+        command: systemctl --user stop TimeStampBot.service
         host: ${{ secrets.HOST }}
         username: feerip
         privateKey: ${{ secrets.OPENSSH_PRIVATE_KEY}}
