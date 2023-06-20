@@ -49,10 +49,18 @@ jobs:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           
           local_path: ./Publish/*
-          remote_path: /home/feerip/TimeStampBot_app/
+          remote_path: /home/feerip/TimeStampBot/
           
           args: '-o ConnectTimeout=5'
     
+    - name: Start TimeStampBot Service
+      uses: garygrossgarten/github-action-ssh@release
+      with: 
+        command: systemctl --user start TimeStampBot.service
+        host: ${{ secrets.HOST }}
+        username: feerip
+        privateKey: ${{ secrets.OPENSSH_PRIVATE_KEY}}
+        
     #- name: Test
     #  run: |
     #    cd DotNet.WebApp.Tests
