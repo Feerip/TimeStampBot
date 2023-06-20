@@ -38,13 +38,13 @@ jobs:
         command: sudo systemctl stop TimeStampBot.service
         host: ${{ secrets.HOST }}
         username: feerip
-        privateKey: ${{ secrets.SSH_PRIVATE_KEY}}
+        privateKey: ${{ secrets.OPENSSH_PRIVATE_KEY}}
     
     - name: SFTP Deploy
       uses: wlixcc/SFTP-Deploy-Action@v1.2.1
       with:
           username: feerip
-          server: 152.67.248.172
+          server: ${{ secrets.HOST }}
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           
