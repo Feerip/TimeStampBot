@@ -86,7 +86,7 @@ namespace _04_interactions_framework.Modules
 
             try
             {
-                dateValue = dateValue.AddTicks(TimeZoneInfo.FindSystemTimeZoneById("US/Pacific").BaseUtcOffset.Ticks);
+                dateValue = dateValue.AddTicks(TimeZoneInfo.FindSystemTimeZoneById("America/Los_Angeles").BaseUtcOffset.Ticks);
                 dateValue = dateValue.AddTicks(-TimeZoneInfo.FindSystemTimeZoneById(db.GetDiscordUserTimeZone(Context.User.Id)).BaseUtcOffset.Ticks);
             }
             catch (ArgumentOutOfRangeException ex)
